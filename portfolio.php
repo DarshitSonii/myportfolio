@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshit Ranpara | Professional Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--secondary-color);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 52px;
+            font-weight: 600;
+            color: #f1f3f7ff;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #f1f4f7ff;
+            width: 0;
+            animation: typing 3s steps(20) 1s forwards, blink 0.6s step-end infinite alternate;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 220px;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        @media(max-width:720px) {
+            .about-img img {
+                height: 500px !important;
+            }
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 700px;
+            transition: transform 0.5s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .skill-bar {
+            margin-bottom: 20px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-progress {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f9f9f9;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            text-align: center;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Portfolio Section - Redesigned */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-img {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-card:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-content {
+            padding: 20px;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .portfolio-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title h2::after {
+            background-color: white;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .form-control {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            box-shadow: none;
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .loading-message {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            line-height: 40px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .portfolio-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Darshit Ranpara</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Darshit Ranpara</h1>
+            <p class="typing-text">Full Stack Developer</p>
+            <p>I create digital experiences that are engaging, functional, and beautiful.</p>
+            <a href="#portfolio" class="btn btn-custom">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images/myimg.jpeg" alt="Darshit Ranpara">
+                </div>
+                <div class="about-text">
+                    <h3>Hello! I'm Darshit Ranpara</h3>
+                    <p>I'm a passionate full stack developer with over 6 Month of experience creating digital solutions for businesses. I specialize in building responsive website with clean, efficient code.</p>
+                    <p>My expertise includes front-end technologies like HTML, CSS, JavaScript, and React, as well as back-end technologies like php and databases like MySQL.</p>
+
+                    <div class="skills">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>HTML</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Php</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>React-Js</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="Darshit_Ranpara_Resume.pdf" download class="btn btn-custom mt-4">Download CV</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Front-end Development</h4>
+                        <p>Custom web applications built with modern technologies and best practices for performance and scalability.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4>Back-end Development</h4>
+                        <p>Custom web applications built with modern technologies and best practices for performance and scalability.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4>API Integration</h4>
+                        <p>User-centered design solutions that enhance usability and create engaging digital experiences.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Responsive Site</h4>
+                        <p>Cross-platform mobile applications that provide seamless experiences across all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section - Redesigned -->
+    <section id="portfolio" class="portfolio py-5 bg-light">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">My Portfolio</h2>
+                <p class="text-muted">A collection of projects showcasing my development skills and creativity.</p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="row g-4">
+
+                <!-- Pig Dice Game -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <img src="images/piggame.png" class="card-img-top img-fluid object-fit-cover rounded-top" alt="Pig Dice Game">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Pig Dice Game</h5>
+                            <p class="card-text flex-grow-1">An entertaining and funny dice game for 2 players where the goal is to be the first to reach 100 points.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">HTML</span>
+                                <span class="badge bg-secondary me-1">CSS</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                            </div>
+                            <a href="https://pig-game-v2.netlify.app/" target="_blank" class="btn btn-outline-primary w-100">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- easyfinancehub -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <img src="images/banking.png" class="card-img-top img-fluid object-fit-cover rounded-top" alt="Finance Dashboard">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Easy FinanceHub</h5>
+                            <p class="card-text flex-grow-1">A comprehensive dashboard for financial data visualization and analysis.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">HTML</span>
+                                <span class="badge bg-secondary me-1">CSS</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                            </div>
+                            <a href="https://easyfinancehub.netlify.app/" target="_blank" class="btn btn-outline-primary w-100">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Todo Task List -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <img src="images/todo.png" class="card-img-top img-fluid object-fit-cover rounded-top" alt="Todo Task List">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Todo Task List</h5>
+                            <p class="card-text flex-grow-1">A simple task management app to organize daily activities efficiently.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">React-JS</span>
+                                <span class="badge bg-secondary me-1">PHP</span>
+                                <span class="badge bg-secondary">MySQL</span>
+                            </div>
+                            <a href="https://mytodoapp.free.nf/" target="_blank" class="btn btn-outline-primary w-100">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <h3>Let's Talk</h3>
+                        <p>I'm always open to discussing new opportunities and interesting projects.</p>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Rajkot,Gujrat- 360002</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>darshitsoni2605@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+91 8401836981</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form id="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                <div class="error-message" id="name-error">Please enter a valid name (min 2 characters)</div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                <div class="error-message" id="email-error">Please enter a valid email address</div>
+                            </div>
+                            <div class="col-12">
+                                <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" required>
+                                <div class="error-message" id="phone-error">Please enter a valid 10-digit phone number</div>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                <div class="error-message" id="subject-error">Please enter a subject (min 5 characters)</div>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                                <div class="error-message" id="message-error">Please enter your message (min 10 characters)</div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-custom" id="submit-btn">Send Message</button>
+                            </div>
+                            <div class="col-12">
+                                <div class="loading-message" id="loading-message">
+                                    <i class="fas fa-spinner fa-spin"></i> Sending your message...
+                                </div>
+                                <div class="success-message" id="success-message">
+                                    <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2025 Darshit Ranpara. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- EmailJS for sending emails -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Initialize EmailJS with your public key
+        // Replace these with your actual EmailJS credentials
+        const EMAILJS_PUBLIC_KEY = "XG1KIlO-WAq_1TebJ";
+        const EMAILJS_SERVICE_ID = "service_s5u8rct";
+        const EMAILJS_TEMPLATE_ID = "template_6jlhoz8";
+
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(44, 62, 80, 0.9)';
+                navbar.style.padding = '0.5rem 0';
+            } else {
+                navbar.style.backgroundColor = 'var(--secondary-color)';
+                navbar.style.padding = '1rem 0';
+            }
+        });
+
+        // Form validation and submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+            const loadingMessage = document.getElementById('loading-message');
+
+            // Validation functions
+            function validateName(name) {
+                return name.length >= 2 && /^[a-zA-Z\s]+$/.test(name);
+            }
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            function validatePhone(phone) {
+                return /^\d{10}$/.test(phone);
+            }
+
+            function validateSubject(subject) {
+                return subject.length >= 5;
+            }
+
+            function validateMessage(message) {
+                return message.length >= 10;
+            }
+
+            // Show error message
+            function showError(inputId, errorId) {
+                document.getElementById(errorId).style.display = 'block';
+                document.getElementById(inputId).style.border = '1px solid #ff6b6b';
+            }
+
+            // Hide error message
+            function hideError(inputId, errorId) {
+                document.getElementById(errorId).style.display = 'none';
+                document.getElementById(inputId).style.border = 'none';
+            }
+
+            // Validate individual field
+            function validateField(inputId, errorId, validationFn) {
+                const value = document.getElementById(inputId).value.trim();
+                if (validationFn(value)) {
+                    hideError(inputId, errorId);
+                    return true;
+                } else {
+                    showError(inputId, errorId);
+                    return false;
+                }
+            }
+
+            // Validate entire form
+            function validateForm() {
+                const isNameValid = validateField('name', 'name-error', validateName);
+                const isEmailValid = validateField('email', 'email-error', validateEmail);
+                const isPhoneValid = validateField('phone', 'phone-error', validatePhone);
+                const isSubjectValid = validateField('subject', 'subject-error', validateSubject);
+                const isMessageValid = validateField('message', 'message-error', validateMessage);
+
+                return isNameValid && isEmailValid && isPhoneValid && isSubjectValid && isMessageValid;
+            }
+
+            // Form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                if (validateForm()) {
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Sending...';
+                    loadingMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+
+                    // Get form data
+                    const formData = {
+                        from_name: document.getElementById('name').value.trim(),
+                        from_email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        subject: document.getElementById('subject').value.trim(),
+                        message: document.getElementById('message').value.trim(),
+                        to_email: "darshitsoni2605@gmail.com"
+                    };
+
+                    console.log("Sending email with data:", formData);
+
+                    // Send email using EmailJS
+                    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+
+                            // Show success message
+                            loadingMessage.style.display = 'none';
+                            successMessage.style.display = 'block';
+
+                            // Reset form
+                            contactForm.reset();
+
+                            // Reset button
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = 'Send Message';
+
+                            // Hide success message after 5 seconds
+                            setTimeout(function() {
+                                successMessage.style.display = 'none';
+                            }, 5000);
+                        }, function(error) {
+                            console.log('FAILED...', error);
+
+                            // Show error message
+                            loadingMessage.style.display = 'none';
+                            alert('Sorry, there was an error sending your message. Please try again later or contact me directly at darshitsoni2605@gmail.com.');
+
+                            // Reset button
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = 'Send Message';
+                        });
+                }
+            });
+
+            // Real-time validation on input change
+            document.getElementById('name').addEventListener('input', function() {
+                validateField('name', 'name-error', validateName);
+            });
+
+            document.getElementById('email').addEventListener('input', function() {
+                validateField('email', 'email-error', validateEmail);
+            });
+
+            document.getElementById('phone').addEventListener('input', function() {
+                validateField('phone', 'phone-error', validatePhone);
+            });
+
+            document.getElementById('subject').addEventListener('input', function() {
+                validateField('subject', 'subject-error', validateSubject);
+            });
+
+            document.getElementById('message').addEventListener('input', function() {
+                validateField('message', 'message-error', validateMessage);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Animate skill bars on scroll
+            const skillBars = document.querySelectorAll('.skill-progress-bar');
+
+            function animateSkillBars() {
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 300);
+                });
+            }
+
+            // Intersection Observer for skill bars animation
+            const aboutSection = document.querySelector('#about');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkillBars();
+                        observer.unobserve(aboutSection);
+                    }
+                });
+            });
+
+            observer.observe(aboutSection);
+        });
+    </script>
+</body>
+
+</html>
