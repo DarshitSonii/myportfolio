@@ -23,4 +23,4 @@ jobs:
         run: php -v
 
       - name: Syntax Check
-        run: php -l index.php
+        run: php -l myportfolio.php
